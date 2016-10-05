@@ -2,7 +2,7 @@ FROM resin/rpi-raspbian
 MAINTAINER Gomasy <nyan@gomasy.jp>
 
 # Upgrade and install required packages
-RUN sed -ie "s/archive.raspbian.org/ftp.jaist.ac.jp\/pub\/Linux\/raspbian-archive/g" /etc/apt/sources.list
+
 RUN apt-get update && apt-get upgrade -y && apt-get install -y python-mysqldb git && apt-get clean
 RUN apt-get install git python-dev python-openssl openssh-server python-pyasn1 python-twisted authbind
 
