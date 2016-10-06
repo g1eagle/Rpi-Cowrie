@@ -54,7 +54,7 @@ RUN export PYTHONPATH=/home/cowrie/cowrie
 RUN wget https://raw.githubusercontent.com/g1eagle/Rpi-Cowrie/master/RPIStart.sh
 RUN apt-get remove --purge wget
 
-RUN mkdir /cowrie/log/
+
 RUN chmod -R 777 /cowrie/log/
 USER cowrie
 ENTRYPOINT ["./RPIStart.sh"]
