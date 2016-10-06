@@ -19,7 +19,8 @@ RUN apt-get update && apt-get install -y \
 	python-pip \
 	python-twisted \
 	python-zope.interface \
-	virtualenv 
+	virtualenv \
+&& rm -rf /var/lib/apt/lists/*
 
 RUN sudo pip install configparser
 RUN sudo pip install enum34
