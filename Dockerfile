@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y \
 	python-twisted \
 	python-zope.interface \
 	virtualenv \
+	wget \
 && rm -rf /var/lib/apt/lists/*
 
 # RUN sudo pip install configparser
@@ -51,4 +52,5 @@ RUN ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
 WORKDIR /cowrie
 RUN export PYTHONPATH=/home/cowrie/cowrie
 RUN wget https://raw.githubusercontent.com/g1eagle/Rpi-Cowrie/master/RPIStart.sh
+RUN apt-get remove --purge wget
 CMD ./RpiStart.sh
