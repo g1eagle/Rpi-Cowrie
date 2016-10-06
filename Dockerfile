@@ -22,6 +22,6 @@ RUN cp cowrie.cfg.dist cowrie.cfg
 WORKDIR /cowrie/data
 
 RUN ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
-RUN cd .
+WORKDIR /cowrie
 RUN export PYTHONPATH=/home/cowrie/cowrie
 RUN start.sh
