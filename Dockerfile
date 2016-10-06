@@ -3,7 +3,7 @@ MAINTAINER g1eagle
 
 # Upgrade and install required packages
 
-RUN apt-get update 
+RUN apt-get -y update 
 RUN sudo apt-get install git virtualenv libmpfr-dev libssl-dev libmpc-dev libffi-dev build-essential libpython-dev python-pip openssh-client
 RUN pip install configparser
 RUN sudo apt-get install git python-twisted python-configparser python-crypto python-pyasn1 python-gmpy2 python-mysqldb python-zope.interface
