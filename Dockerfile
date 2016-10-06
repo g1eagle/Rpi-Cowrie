@@ -9,8 +9,7 @@ RUN pip install configparser
 RUN sudo apt-get install git python-twisted python-configparser python-crypto python-pyasn1 python-gmpy2 python-mysqldb python-zope.interface
 
 # Install cowrie
-RUN sudo apk add python py-asn1 py-twisted py-zope-interface libffi-dev \
-        py-cryptography py-pip py-six py-cffi py-idna py-ipaddress py-openssl
+# RUN sudo apk add python py-asn1 py-twisted py-zope-interface libffi-dev py-cryptography py-pip py-six py-cffi py-idna py-ipaddress py-openssl
 RUN sudo pip install enum34
 RUN sudo adduser --disabled-password cowrie
 RUN sudo su - cowrie
