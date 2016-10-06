@@ -1,0 +1,5 @@
+
+Command to build it
+docker build -t g1eagle/rpi-cowrie https://raw.githubusercontent.com/g1eagle/Rpi-Cowrie/master/Dockerfile
+
+This so far "appears to wokr" more testing will need to happen to make sure it's working correctly.
