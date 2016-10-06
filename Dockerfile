@@ -14,12 +14,12 @@ RUN sudo pip install enum34
 RUN adduser --disabled-password --gecos '' cowrie
 RUN sudo su - cowrie
 RUN git clone http://github.com/micheloosterhof/cowrie
-RUN cd cowrie
+WORKDIR /cowrie
 RUN virtualenv cowrie-env
 # RUN source cowrie-env/bin/activate
 # RUN pip install -r requirements.txt
 RUN cp cowrie.cfg.dist cowrie.cfg
-RUN cd data
+WORKDIR /cowrie/data
 RUN ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
 RUN cd .
 RUN export PYTHONPATH=/home/cowrie/cowrie
