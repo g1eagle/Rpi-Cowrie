@@ -1,6 +1,6 @@
 FROM resin/rpi-raspbian
 MAINTAINER g1eagle
-
+ 
 # Upgrade and install required packages
 RUN apt-get update && apt-get install -y \
     build-essential \
