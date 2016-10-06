@@ -24,6 +24,11 @@ RUN apt-get update && apt-get install -y \
 
 RUN sudo pip install configparser
 RUN sudo pip install enum34
+RUN pip install twisted[conch]
+RUN pip install cryptography
+RUN pip install pyopenssl
+RUN pip install gmpy2
+RUN pip install service_identity
  
 # Install cowrie
 # RUN sudo apk add python py-asn1 py-twisted py-zope-interface libffi-dev py-cryptography py-pip py-six py-cffi py-idna py-ipaddress py-openssl
@@ -32,13 +37,17 @@ RUN adduser --disabled-password --gecos '' cowrie
 RUN sudo su - cowrie
 RUN git clone http://github.com/micheloosterhof/cowrie
 WORKDIR /cowrie
-# RUN virtualenv cowrie-env
-# RUN source cowrie-env/bin/activate
-# RUN pip install -r requirements.txt
+RUN virtualenv cowrie-env
+RUN source cowrie-env/bin/activate
+
+
+
+
+
 RUN cp cowrie.cfg.dist cowrie.cfg
 WORKDIR /cowrie/data
 
 RUN ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
 WORKDIR /cowrie
 RUN export PYTHONPATH=/home/cowrie/cowrie
-CMD ./start.sh
+CMD ./start.sh cowrie-env
