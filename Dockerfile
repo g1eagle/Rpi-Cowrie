@@ -17,7 +17,7 @@ RUN git clone http://github.com/micheloosterhof/cowrie
 RUN cd cowrie
 RUN virtualenv cowrie-env
 # RUN source cowrie-env/bin/activate
-RUN pip install -r requirements.txt
+# RUN pip install -r requirements.txt
 RUN cp cowrie.cfg.dist cowrie.cfg
 RUN cd data
 RUN ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
