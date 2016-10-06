@@ -24,4 +24,4 @@ WORKDIR /cowrie/data
 RUN ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
 WORKDIR /cowrie
 RUN export PYTHONPATH=/home/cowrie/cowrie
-RUN ./start.sh
+CMD ./start.sh
