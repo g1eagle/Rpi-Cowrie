@@ -1,5 +1,5 @@
 FROM resin/rpi-raspbian
-MAINTAINER Gomasy <nyan@gomasy.jp>
+MAINTAINER g1eagle
 
 # Upgrade and install required packages
 
@@ -16,11 +16,11 @@ RUN sudo su - cowrie
 RUN git clone http://github.com/micheloosterhof/cowrie
 RUN cd cowrie
 RUN virtualenv cowrie-env
-RUN source cowrie-env/bin/activate
+# RUN source cowrie-env/bin/activate
 RUN pip install -r requirements.txt
 RUN cp cowrie.cfg.dist cowrie.cfg
 RUN cd data
 RUN ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
 RUN cd .
 RUN export PYTHONPATH=/home/cowrie/cowrie
-RUN start.sh cowrie-env
+RUN start.sh
