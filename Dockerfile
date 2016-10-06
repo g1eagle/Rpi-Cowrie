@@ -50,4 +50,5 @@ WORKDIR /cowrie/data
 RUN ssh-keygen -t dsa -b 1024 -f ssh_host_dsa_key
 WORKDIR /cowrie
 RUN export PYTHONPATH=/home/cowrie/cowrie
-CMD ./start.sh
+RUN wget https://raw.githubusercontent.com/g1eagle/Rpi-Cowrie/master/RPIStart.sh
+CMD ./RpiStart.sh
