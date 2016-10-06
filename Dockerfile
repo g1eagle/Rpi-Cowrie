@@ -11,7 +11,7 @@ RUN sudo apt-get install git python-twisted python-configparser python-crypto py
 # Install cowrie
 # RUN sudo apk add python py-asn1 py-twisted py-zope-interface libffi-dev py-cryptography py-pip py-six py-cffi py-idna py-ipaddress py-openssl
 RUN sudo pip install enum34
-RUN sudo adduser --disabled-password cowrie
+RUN adduser --disabled-password --gecos '' cowrie
 RUN sudo su - cowrie
 RUN git clone http://github.com/micheloosterhof/cowrie
 RUN cd cowrie
