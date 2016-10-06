@@ -1,5 +1,5 @@
 #!/bin/bash
 adduser --disabled-password --gecos '' r
-adduser r sudo
+adduser cowrie sudo
 echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-su -m r -c /home/cowrie/start.sh
+su -m r -c /cowrie/start.sh
