@@ -1,8 +1,7 @@
 #!/bin/bash
-echo "$USER"  
-adduser --disabled-password --gecos '' r
-adduser cowrie sudo
+id -u somename &>/dev/null || adduser --disabled-password --gecos '' cowrie
+id -u somename &>/dev/null || adduser cowrie sudo
 echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 echo "import pty; pty.spawn('/bin/bash')" > /tmp/asdf.py
 python /tmp/asdf.py
-su -m r -c /cowrie/start.sh
+sh /cowrie/start.sh
